@@ -31,6 +31,9 @@ namespace TSI.Model
         [Column("NumeroDocumento")]
         public string NumeroDocumento { get; set; }
 
+        [Column("Telefono")]
+        public string Telefono { get; set; }
+
         [NotMapped]
         public TipoIdentificacion TipoIdentificacion { get; set; }
     }

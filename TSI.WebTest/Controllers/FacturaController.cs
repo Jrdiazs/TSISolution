@@ -35,8 +35,14 @@ namespace TSI.WebTest.Controllers
         {
             try
             {
-                Factura factura = new Factura();
-                itemFactura.EstadoFacturaItem = (int)EstadoFacturaItem.Cancelado;
+                Factura factura = new Factura();    
+
+                if (itemFactura.Articulo.TipoArticulo == (int)TipoArticulo.TourGuiado)
+                {
+                    itemFactura.EstadoFacturaItem = (int)EstadoFacturaItem.Cancelado;
+                }
+                else throw new Exception("El articulo  no es de tipo tour y no se puede cancelar");
+               
                 
                 return Ok(itemFactura);
             }
